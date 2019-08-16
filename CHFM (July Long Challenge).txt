@@ -1,0 +1,45 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+			Scanner s = new Scanner(System.in);
+	int x = s.nextInt();
+	while(x>0)
+	{
+	int y = s.nextInt();
+	int j=0;
+	long sum = 0;
+	long a[] = new long[y];
+	for(int i=0;i<y;i++)
+	{
+		a[i] = s.nextInt();
+		sum = sum + a[i]; 
+	}
+	double actualMean = sum/(double)y;
+	for(j=0;j<y;j++)
+	{
+		double realMean = (sum - a[j])/(double)(y-1);
+		if(realMean == actualMean) 
+		{
+			System.out.print(j+1);
+			break;
+		}
+	}
+	if(j>=y)
+	{
+		System.out.print("Impossible");
+	}
+	System.out.println("");
+	x--;
+	}
+	s.close();
+	}
+}
