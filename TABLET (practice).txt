@@ -1,0 +1,54 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner in= new Scanner(System.in);
+		int n= in.nextInt();
+		int a[]= new int[n];
+		int b[]= new int[n];
+		for(int i=0; i<n; i++)
+		{
+			a[i]=in.nextInt();
+			b[i]=in.nextInt();
+			int w[] = new int[a[i]];
+			int h[] = new int[a[i]];
+			int p[] = new int[a[i]];
+			int count=0;
+			List<Integer> l1 = new ArrayList<Integer>();
+			for(int j=0; j<a[i]; j++)
+			{
+				w[j]=in.nextInt();
+				h[j]=in.nextInt();
+				p[j]=in.nextInt();
+			}
+			for(int j=0; j<a[i]; j++)
+			{
+				if(p[j]<=b[i])
+				{
+					count++;
+					int c= w[j]*h[j];
+					l1.add(c);
+				}
+			}
+				if(count==0)
+		{
+			System.out.println("no tablet");
+		}
+		else
+		{
+			Integer max= Collections.max(l1);
+			System.out.println(max);
+		}
+	
+			
+		}
+	}
+}
