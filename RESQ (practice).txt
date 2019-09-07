@@ -1,0 +1,38 @@
+	Scanner in =new Scanner(System.in);
+		int n= in.nextInt();
+		
+		for(int i=0; i<n; i++)
+		{
+			int a=in.nextInt();
+			List<Integer> l1 = new ArrayList<Integer>(); 
+			for(int j=1; j<=a; j++)
+			{
+				if(a%j==0)
+				{
+					l1.add(j);
+				}
+			}
+			if(l1.size()%2!=0)
+			{
+				System.out.println("0");
+			}
+			
+			
+			else
+			{
+				int b[] = new int[(l1.size())/2];
+				for(int j=0; j<(l1.size())/2; j++)
+				{
+					b[j]=l1.get(l1.size()-j-1)-l1.get(j);
+				}
+				int min=b[0];
+				for(int j=1; j<(l1.size())/2; j++)
+				{
+					if(b[j]<min)
+					{
+						min=b[j];
+					}
+				}
+				System.out.println(min);
+			}
+		}
